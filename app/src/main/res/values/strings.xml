@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LiveCorona</string>
+    <string name="official_email_id">Email Id</string>
+    <string name="mobile">Mobile Number</string>
+    <string name="name">Name</string>
+    <string name="location">Click For Location</string>
+    <string name="submit">Submit</string>
+</resources>

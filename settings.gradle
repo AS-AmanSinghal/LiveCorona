@@ -1,0 +1,2 @@
+rootProject.name='LiveCorona'
+include ':app'
