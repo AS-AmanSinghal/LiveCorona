@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         location=findViewById(R.id.login_location);
         button=findViewById(R.id.login_btn);
         progressBar = findViewById(R.id.login_progress);
-
+        if (getSupportActionBar() != null)
+            getSupportActionBar().hide();
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -78,13 +79,19 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s)
             {
                 if (String.valueOf(name.getText()).trim().isEmpty() || String.valueOf(email.getText()).trim().isEmpty()
-                        || String.valueOf(mobile.getText()).trim().isEmpty() || String.valueOf(mobile.getText()).length()!=10 || String.valueOf(location.getText()).equals("Click For Location"))
+                        || String.valueOf(mobile.getText()).trim().isEmpty()
+                        || String.valueOf(mobile.getText()).length() != 10
+                        || String.valueOf(location.getText()).equals("Click For Location")
+                        || !String.valueOf(email.getText()).contains("@")
+                        || !String.valueOf(email.getText()).contains("."))
                 {
+                    button.setBackgroundResource(R.drawable.disablebuttonbackground);
                     button.setEnabled(false);
                 }
                 else
                 {
                     button.setEnabled(true);
+                    button.setBackgroundResource(R.drawable.enablebuttonbackground);
                 }
             }
         };
