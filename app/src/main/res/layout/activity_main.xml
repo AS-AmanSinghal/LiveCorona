@@ -12,95 +12,110 @@
     tools:context=".MainActivity">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:background="#80FFFFFF"
-        android:orientation="vertical">
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:gravity="center">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginRight="20dp"
-            android:hint="@string/name"
-            android:textColorHint="@color/colorPrimary"
-            app:boxStrokeColor="@color/borderColor">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/login_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_person"
-                android:drawablePadding="4dp"
-                android:inputType="text"
-                android:maxLength="50"
-                android:textColorHint="@color/colorPrimary" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginRight="20dp"
-            android:hint="@string/official_email_id"
-            android:textColorHint="@color/colorPrimary"
-            app:boxStrokeColor="@color/borderColor">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/login_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_email"
-                android:drawablePadding="4dp"
-                android:inputType="textEmailAddress"
-                android:maxLength="50"
-                android:textColorHint="@color/colorPrimary" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginRight="20dp"
-            android:hint="@string/mobile"
-            android:textColorHint="@color/colorPrimary"
-            app:boxStrokeColor="@color/borderColor">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/login_mobile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_mobile"
-                android:drawablePadding="4dp"
-                android:inputType="phone"
-                android:maxLength="10"
-                android:textColorHint="@color/colorPrimary" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/login_location"
             android:gravity="center"
-            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="20dp"
+                android:hint="@string/name"
+                android:textColorHint="@color/colorPrimary"
+                app:boxStrokeColor="@color/borderColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/login_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_person"
+                    android:drawablePadding="4dp"
+                    android:inputType="text"
+                    android:maxLength="50"
+                    android:textColorHint="@color/colorPrimary" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="20dp"
+                android:hint="@string/official_email_id"
+                android:textColorHint="@color/colorPrimary"
+                app:boxStrokeColor="@color/borderColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/login_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_email"
+                    android:drawablePadding="4dp"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="50"
+                    android:textColorHint="@color/colorPrimary" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="20dp"
+                android:hint="@string/mobile"
+                android:textColorHint="@color/colorPrimary"
+                app:boxStrokeColor="@color/borderColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/login_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_mobile"
+                    android:drawablePadding="4dp"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:textColorHint="@color/colorPrimary" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/login_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/location"
+                android:textColor="@color/colorAccent"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="7dp"
+                android:text="@string/submit" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/login_progress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/location"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp"/>
-
-        <Button
-            android:padding="7dp"
-            android:layout_margin="10dp"
-            android:id="@+id/login_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/submit"/>
-    </LinearLayout>
-
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone" />
+    </RelativeLayout>
 </ScrollView>

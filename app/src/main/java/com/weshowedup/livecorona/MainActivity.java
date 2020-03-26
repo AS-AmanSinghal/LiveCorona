@@ -1,10 +1,5 @@
 package com.weshowedup.livecorona;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -14,8 +9,14 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     TextInputEditText name,email,mobile;
     TextView location;
     Button button;
+    ProgressBar progressBar;
     double latitude;
     double longitude;
     @Override
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mobile=findViewById(R.id.login_mobile);
         location=findViewById(R.id.login_location);
         button=findViewById(R.id.login_btn);
-
+        progressBar = findViewById(R.id.login_progress);
 
         location.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,8 +56,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
+                progressBar.setVisibility(View.VISIBLE);
 //                Toast.makeText(MainActivity.this,latitude+" "+longitude,Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(MainActivity.this,QuestionActivity.class));
+                finish();
             }
         });
 
