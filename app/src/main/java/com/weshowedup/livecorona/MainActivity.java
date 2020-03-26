@@ -100,11 +100,9 @@ public class MainActivity extends AppCompatActivity {
         mobile.addTextChangedListener(textWatcher);
         location.addTextChangedListener(textWatcher);
         button.setEnabled(false);
-
     }
 
-    private void requestPermission()
-    {
+    private void requestPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED)
         {
@@ -132,8 +130,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void getCurrentLocation()
-    {
+    private void getCurrentLocation() {
         final LocationRequest locationRequest=new LocationRequest();
         locationRequest.setInterval(1000);
         locationRequest.setFastestInterval(3000);
