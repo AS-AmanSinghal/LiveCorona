@@ -40,19 +40,9 @@ public class MainActivity extends AppCompatActivity {
         name=findViewById(R.id.login_name);
         email=findViewById(R.id.login_email);
         mobile=findViewById(R.id.login_mobile);
-        location=findViewById(R.id.login_location);
         button=findViewById(R.id.login_btn);
         progressBar = findViewById(R.id.login_progress);
-        if (getSupportActionBar() != null)
-            getSupportActionBar().hide();
-        location.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                requestPermission();
-            }
-        });
-
+        requestPermission();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -67,12 +57,10 @@ public class MainActivity extends AppCompatActivity {
         TextWatcher textWatcher=new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
             }
 
             @Override
@@ -81,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 if (String.valueOf(name.getText()).trim().isEmpty() || String.valueOf(email.getText()).trim().isEmpty()
                         || String.valueOf(mobile.getText()).trim().isEmpty()
                         || String.valueOf(mobile.getText()).length() != 10
-                        || String.valueOf(location.getText()).equals("Click For Location")
                         || !String.valueOf(email.getText()).contains("@")
                         || !String.valueOf(email.getText()).contains("."))
                 {
@@ -98,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
         name.addTextChangedListener(textWatcher);
         email.addTextChangedListener(textWatcher);
         mobile.addTextChangedListener(textWatcher);
-        location.addTextChangedListener(textWatcher);
         button.setEnabled(false);
     }
 
@@ -147,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
                             int latestLocationindex=locationResult.getLocations().size()-1;
                             latitude=locationResult.getLocations().get(latestLocationindex).getLatitude();
                             longitude=locationResult.getLocations().get(latestLocationindex).getLongitude();
-                            location.setText("Longitude "+latitude+" Longitude "+longitude);
                         }
                     }
                 }, Looper.getMainLooper());
